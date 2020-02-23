@@ -26,6 +26,10 @@ def consolidate_cart(cart)
     else 
       cart[counter][:count] = 1
       ans.push(cart[counter])
+    end
+    counter += 1
+  end
+  ans
       
 end
 
