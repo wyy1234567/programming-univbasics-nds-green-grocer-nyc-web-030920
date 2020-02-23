@@ -2,39 +2,34 @@ CLEARANCE_ITEM_DISCOUNT_RATE = 0.20
 BIG_PURCHASE_DISCOUNT_RATE = 0.10
 
 def find_item_by_name_in_collection(name, collection)
-  # Implement me first!
-  #
-  # Consult README for inputs and outputs
-  counter = 0 
-  while counter < collection.length do 
-    return collection[counter] if name === collection[i][:item]
-    counter += 1
+  i = 0
+  while i < collection.length do
+    return collection[i] if name === collection[i][:item]
+    i += 1
   end
   nil
 end
 
 def consolidate_cart(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This returns a new Array that represents the cart. Don't merely
-  # change `cart` (i.e. mutate) it. It's easier to return a new thing.
-  ans = []
-  counter = 0 
-  
-  while counter < cart.length do 
-    item = cart[counter][:item]
-    ifSeen = find_item_by_name_in_collection(item, ans) 
-    if ifSeen
-      ifSeen[:count] += 1 
-    else 
-      cart[counter][:count] = 1
-      ans.push(cart[counter])
+  i = 0
+  result = []
+
+  while i < cart.count do
+    item_name = cart[i][:item]
+    sought_item = find_item_by_name_in_collection(item_name, result)
+    if sought_item
+      sought_item[:count] += 1
+    else
+      cart[i][:count] = 1
+      result << cart[i]
     end
-    counter += 1
+    i += 1
   end
-  ans
-      
+
+  result
 end
+
+# Don't forget, you can make methods to make your life easy!
 
 def mk_coupon_hash(c)
   rounded_unit_price = (c[:cost].to_f * 1.0 / c[:num]).round(2)
