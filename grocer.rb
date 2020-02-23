@@ -20,7 +20,9 @@ def consolidate_cart(cart)
   
   while counter < cart.length do 
     item = cart[counter][:item]
-    ifSeen = find_item_by_name_in_collection(item, ans)
+    ifSeen = find_item_by_name_in_collection(item, ans) 
+    if ifSeen
+      c
       
 end
 
