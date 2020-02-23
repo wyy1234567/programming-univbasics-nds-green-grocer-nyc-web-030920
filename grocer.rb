@@ -22,7 +22,7 @@ def consolidate_cart(cart)
     item = cart[counter][:item]
     ifSeen = find_item_by_name_in_collection(item, ans) 
     if ifSeen
-      c
+      
       
 end
 
