@@ -19,6 +19,7 @@ def consolidate_cart(cart)
   counter = 0 
   
   while counter < cart.length do 
+    item = cart[counter][:item]
     
 end
 
