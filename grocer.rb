@@ -23,7 +23,8 @@ def consolidate_cart(cart)
     ifSeen = find_item_by_name_in_collection(item, ans) 
     if ifSeen
       ifSeen[:count] += 1 
-      else 
+    else 
+      cart
       
 end
 
