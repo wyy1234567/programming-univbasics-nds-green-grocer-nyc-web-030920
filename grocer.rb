@@ -24,7 +24,8 @@ def consolidate_cart(cart)
     if ifSeen
       ifSeen[:count] += 1 
     else 
-      cart
+      cart[counter][:count] = 1
+      ans.push(cart[counter])
       
 end
 
